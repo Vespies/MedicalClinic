@@ -29,6 +29,9 @@ public class Main extends Application {
         initDataLoader.addDoctor();
         initDataLoader.addSecretary();
         initDataLoader.addAdmin();
+        initDataLoader.addVisit();
+        initDataLoader.addDrug();
+        initDataLoader.addPrescription();
     }
 
     @Override

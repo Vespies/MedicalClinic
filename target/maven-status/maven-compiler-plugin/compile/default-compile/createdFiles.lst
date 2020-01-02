@@ -1,0 +1,5 @@
+sample\controller\PatientVisitHistoryController.class
+sample\controller\PatientPrescriptionController.class
+sample\controller\PatientPrescriptionController$1.class
+sample\service\LoggedUser.class
+sample\controller\PatientAddVisitController.class

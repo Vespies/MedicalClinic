@@ -12,10 +12,7 @@ import sample.model.Admin;
 import sample.model.Doctor;
 import sample.model.Patient;
 import sample.model.Secretary;
-import sample.service.AdminService;
-import sample.service.DoctorService;
-import sample.service.PatientService;
-import sample.service.SecretaryService;
+import sample.service.*;
 
 import java.io.IOException;
 
@@ -33,7 +30,7 @@ public class LoginController {
     private SecretaryService secretaryService;
     private AdminService adminService;
 
-    public void initialize(){
+    public void initialize() {
         patientService = new PatientService();
         doctorService = new DoctorService();
         secretaryService = new SecretaryService();
@@ -44,18 +41,30 @@ public class LoginController {
         String idNumber = idNumberField.getText();
         String password = passwordField.getText();
 
-        if (idNumber.charAt(0) == 'p'){
+        if (idNumber.charAt(0) == 'p') {
             Patient patient = patientService.findByIdNumber(idNumber);
-            if (patient != null && patient.getPassword().equals(password)) patientView(actionEvent);
-        }else if (idNumber.charAt(0) == 'd'){
+            if (patient != null && patient.getPassword().equals(password)){
+                LoggedUser.getInstance().setPatient(patient);
+                patientView(actionEvent);
+            }
+        } else if (idNumber.charAt(0) == 'd') {
             Doctor doctor = doctorService.findByIdNumber(idNumber);
-            if (doctor != null && doctor.getPassword().equals(password)) doctorView(actionEvent);
-        }else if (idNumber.charAt(0) == 's'){
+            if (doctor != null && doctor.getPassword().equals(password)){
+                LoggedUser.getInstance().setDoctor(doctor);
+                doctorView(actionEvent);
+            }
+        } else if (idNumber.charAt(0) == 's') {
             Secretary secretary = secretaryService.findByIdNumber(idNumber);
-            if (secretary != null && secretary.getPassword().equals(password)) secretaryView(actionEvent);
-        }else if (idNumber.charAt(0) == 'a'){
+            if (secretary != null && secretary.getPassword().equals(password)){
+                LoggedUser.getInstance().setSecretary(secretary);
+                secretaryView(actionEvent);
+            }
+        } else if (idNumber.charAt(0) == 'a') {
             Admin admin = adminService.findByIdNumber(idNumber);
-            if (admin != null && admin.getPassword().equals(password)) adminView(actionEvent);
+            if (admin != null && admin.getPassword().equals(password)){
+                LoggedUser.getInstance().setAdmin(admin);
+                adminView(actionEvent);
+            }
         }
     }
 

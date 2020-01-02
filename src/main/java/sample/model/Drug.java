@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class Drug {
 
-    private int id;
+    private Integer id;
     private String Name;
     private int quantity;
 }

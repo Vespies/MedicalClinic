@@ -9,10 +9,15 @@ import lombok.NoArgsConstructor;
 @Data
 public class Prescription {
 
-    private int id;
+    private Integer id;
     private String drugName;
     private int quantity;
     private String dosage;
-    private int patientId;
-    private int doctorId;
+    private Integer patientId;
+    private Integer doctorId;
+    
+    @Override
+    public String toString() {
+        return "Prescription id: " + id;
+    }
 }

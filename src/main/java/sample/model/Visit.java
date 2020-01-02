@@ -5,18 +5,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class Visit {
 
-    private int id;
+    private Integer id;
     private LocalDate date;
-    private LocalTime time;
     private boolean accepted;
-    private int patientId;
-    private int doctorId;
-    private int noteId;
+    private Integer patientId;
+    private Integer doctorId;
+    private Integer noteId;
+    
+    @Override
+    public String toString() {
+        return "Visit : " + date + " accepted : " + accepted;
+    }
 }

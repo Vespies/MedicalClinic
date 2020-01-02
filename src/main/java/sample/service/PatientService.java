@@ -5,14 +5,21 @@ import sample.model.Patient;
 
 public class PatientService {
 
-    public Patient findByIdNumber(String idNumber){
-        for (Patient element: DataBase.getInstance().getPatientList()) {
+    public Patient findByIdNumber(String idNumber) {
+        for (Patient element : DataBase.getInstance().getPatientList()) {
             if (element.getIdNumber().equals(idNumber)) return element;
         }
         return null;
     }
 
-    public int generatePatientId(){
+    public Patient findById(Integer id) {
+        for (Patient element : DataBase.getInstance().getPatientList()) {
+            if (element.getId().equals(id)) return element;
+        }
+        return null;
+    }
+
+    public int generatePatientId() {
         return DataBase.getInstance().getPatientList().size() + 1;
     }
 }

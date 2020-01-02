@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class Note {
 
-    private int id;
+    private Integer id;
     private String note;
 }

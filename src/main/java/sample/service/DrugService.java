@@ -1,8 +1,11 @@
 package sample.service;
 
-import lombok.Data;
+import sample.db.DataBase;
 
 public class DrugService {
 
 
+    public int generateDrugId(){
+        return DataBase.getInstance().getDrugList().size() + 1;
+    }
 }

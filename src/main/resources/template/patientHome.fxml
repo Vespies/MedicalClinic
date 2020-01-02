@@ -11,7 +11,7 @@
    <children>
       <HBox alignment="CENTER" layoutX="158.0" layoutY="300.0" prefHeight="100.0" prefWidth="685.0">
          <children>
-            <Button mnemonicParsing="false" text="Add Visit">
+            <Button mnemonicParsing="false" text="Add Visit" onAction="#addVisitView">
                <font>
                   <Font size="18.0" />
                </font>
@@ -19,7 +19,7 @@
                   <Insets right="15.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Visit History">
+            <Button mnemonicParsing="false" text="Visit History" onAction="#visitHistoryView">
                <font>
                   <Font size="18.0" />
                </font>
@@ -27,7 +27,7 @@
                   <Insets right="15.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Prescription">
+            <Button mnemonicParsing="false" text="Prescription" onAction="#prescriptionView">
                <font>
                   <Font size="18.0" />
                </font>
@@ -35,7 +35,7 @@
                   <Insets right="15.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Logout">
+            <Button mnemonicParsing="false" text="Logout" onAction="#logout">
                <font>
                   <Font size="18.0" />
                </font>
