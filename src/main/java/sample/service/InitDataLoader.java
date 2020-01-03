@@ -51,6 +51,9 @@ public class InitDataLoader {
     public void addVisit() {
         Visit visit = new Visit(visitService.generateVisitId(), LocalDate.now().plusDays(1), false, 1, 1, null);
         DataBase.getInstance().getVisitList().add(visit);
+
+        visit = new Visit(visitService.generateVisitId(), LocalDate.now().plusDays(1), true, 1, 1, null);
+        DataBase.getInstance().getVisitList().add(visit);
     }
 
     public void addDrug() {

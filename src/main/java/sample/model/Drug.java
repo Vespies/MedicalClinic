@@ -10,6 +10,11 @@ import lombok.NoArgsConstructor;
 public class Drug {
 
     private Integer id;
-    private String Name;
+    private String name;
     private int quantity;
+
+    @Override
+    public String toString() {
+        return "Drug name : " + name + " quantity : " + quantity;
+    }
 }

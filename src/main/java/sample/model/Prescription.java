@@ -15,7 +15,7 @@ public class Prescription {
     private String dosage;
     private Integer patientId;
     private Integer doctorId;
-    
+
     @Override
     public String toString() {
         return "Prescription id: " + id;

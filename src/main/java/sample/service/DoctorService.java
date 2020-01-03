@@ -15,7 +15,7 @@ public class DoctorService {
     public int generateDoctorId() {
         return DataBase.getInstance().getDoctorList().size() + 1;
     }
-    
+
     public Doctor findById(Integer id) {
         for (Doctor element : DataBase.getInstance().getDoctorList()){
             if (element.getId().equals(id)) return element;

@@ -17,7 +17,7 @@ public class Visit {
     private Integer patientId;
     private Integer doctorId;
     private Integer noteId;
-    
+
     @Override
     public String toString() {
         return "Visit : " + date + " accepted : " + accepted;
