@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.doctor.DoctorPatientHistoryListController">
+   <children>
+      <ListView layoutX="39.0" layoutY="103.0" prefHeight="470.0" prefWidth="200.0" fx:id="patientList"/>
+      <ListView layoutX="289.0" layoutY="103.0" prefHeight="470.0" prefWidth="200.0" fx:id="visitList"/>
+      <Label layoutX="96.0" layoutY="56.0" text="Patient List">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="356.0" layoutY="56.0" text="Visit List">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="39.0" layoutY="632.0" mnemonicParsing="false" text="Back" onAction="#doctorHomeVie">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TextArea layoutX="551.0" layoutY="178.0" prefHeight="395.0" prefWidth="416.0" fx:id="noteField"/>
+      <Label layoutX="739.0" layoutY="130.0" text="Note">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

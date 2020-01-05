@@ -20,15 +20,12 @@ public class PatientVisitHistoryController {
     @FXML
     private ListView<Visit> visitList;
 
-    private VisitService visitService;
-
-
     public void initialize() {
-        visitService = new VisitService();
+        VisitService visitService = new VisitService();
 
         Patient patient = LoggedUser.getInstance().getPatient();
 
-        visitList.getItems().setAll(visitService.patientHistory(patient.getId()));
+        visitList.getItems().setAll(visitService.patientVisitList(patient.getId()));
     }
 
 

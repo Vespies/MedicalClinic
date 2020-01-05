@@ -15,6 +15,6 @@ public class Drug {
 
     @Override
     public String toString() {
-        return "Drug name : " + name + " quantity : " + quantity;
+        return name + " quantity : " + quantity;
     }
 }

@@ -4,8 +4,6 @@ import sample.db.DataBase;
 import sample.model.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class InitDataLoader {
@@ -21,21 +19,17 @@ public class InitDataLoader {
     private Random random = new Random();
 
     public void addPatient() {
-        List<Patient> patientList = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            Patient patient = new Patient(patientService.generatePatientId(), "patient" + i, "patient" + i, "p100" + i, "ppp", "address" + i, 30, "man");
-            patientList.add(patient);
+            Patient patient = new Patient(patientService.generatePatientId(), "patient" + i, "patient" + i, "p100" + (i + 1), "ppp", "address" + i, 30, "man");
+            DataBase.getInstance().getPatientList().add(patient);
         }
-        DataBase.getInstance().setPatientList(patientList);
     }
 
     public void addDoctor() {
-        List<Doctor> doctorList = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            Doctor doctor = new Doctor(doctorService.generateDoctorId(), "doctor" + i, "doctor" + i, "d200" + i, "ddd", "address" + i, 30, "man");
-            doctorList.add(doctor);
+            Doctor doctor = new Doctor(doctorService.generateDoctorId(), "doctor" + i, "doctor" + i, "d200" + (i + 1), "ddd", "address" + i, 30, "man");
+            DataBase.getInstance().getDoctorList().add(doctor);
         }
-        DataBase.getInstance().setDoctorList(doctorList);
     }
 
     public void addSecretary() {
@@ -48,11 +42,21 @@ public class InitDataLoader {
         DataBase.getInstance().getAdminList().add(admin);
     }
 
+    public void addNote() {
+        Note note = new Note(noteService.generateNoteId(), "test note 1");
+        DataBase.getInstance().getNoteList().add(note);
+
+        note = new Note(noteService.generateNoteId(), "test note 2");
+        DataBase.getInstance().getNoteList().add(note);
+    }
+
     public void addVisit() {
-        Visit visit = new Visit(visitService.generateVisitId(), LocalDate.now().plusDays(1), false, 1, 1, null);
+        Note note = DataBase.getInstance().getNoteList().get(0);
+        Visit visit = new Visit(visitService.generateVisitId(), LocalDate.now().plusDays(1), false, 1, 1, note.getId());
         DataBase.getInstance().getVisitList().add(visit);
 
-        visit = new Visit(visitService.generateVisitId(), LocalDate.now().plusDays(1), true, 1, 1, null);
+        note = DataBase.getInstance().getNoteList().get(1);
+        visit = new Visit(visitService.generateVisitId(), LocalDate.now().plusDays(1), true, 1, 1, note.getId());
         DataBase.getInstance().getVisitList().add(visit);
     }
 

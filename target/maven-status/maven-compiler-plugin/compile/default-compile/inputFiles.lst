@@ -1,25 +1,36 @@
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\model\Patient.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\service\VisitService.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\controller\SecretaryHomeController.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\model\User.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\model\Visit.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\service\AdminService.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\service\DrugService.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\service\InitDataLoader.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\controller\LoginController.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\controller\DoctorHomeController.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\controller\AdminHomeController.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\controller\PatientHomeController.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\model\Note.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\service\PrescriptionService.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\model\Secretary.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\service\DoctorService.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\service\PatientService.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\db\DataBase.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\service\NoteService.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\model\Admin.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\model\Doctor.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\model\Drug.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\Main.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\service\SecretaryService.java
-D:\Uni\Medical Clinic\medicalClinic\src\main\java\sample\model\Prescription.java
+D:\MedicalClinic\src\main\java\sample\model\Visit.java
+D:\MedicalClinic\src\main\java\sample\controller\secretary\SecretaryVisitListController.java
+D:\MedicalClinic\src\main\java\sample\service\SecretaryService.java
+D:\MedicalClinic\src\main\java\sample\controller\patient\PatientVisitHistoryController.java
+D:\MedicalClinic\src\main\java\sample\controller\patient\PatientHomeController.java
+D:\MedicalClinic\src\main\java\sample\model\Patient.java
+D:\MedicalClinic\src\main\java\sample\controller\doctor\DoctorAddNoteController.java
+D:\MedicalClinic\src\main\java\sample\model\Note.java
+D:\MedicalClinic\src\main\java\sample\controller\LoginController.java
+D:\MedicalClinic\src\main\java\sample\model\Prescription.java
+D:\MedicalClinic\src\main\java\sample\Main.java
+D:\MedicalClinic\src\main\java\sample\controller\admin\AdminHomeController.java
+D:\MedicalClinic\src\main\java\sample\service\DrugService.java
+D:\MedicalClinic\src\main\java\sample\service\PatientService.java
+D:\MedicalClinic\src\main\java\sample\controller\doctor\DoctorHomeController.java
+D:\MedicalClinic\src\main\java\sample\service\AdminService.java
+D:\MedicalClinic\src\main\java\sample\controller\secretary\SecretaryAddDrugController.java
+D:\MedicalClinic\src\main\java\sample\controller\doctor\DoctorAddPrescriptionController.java
+D:\MedicalClinic\src\main\java\sample\db\DataBase.java
+D:\MedicalClinic\src\main\java\sample\model\Doctor.java
+D:\MedicalClinic\src\main\java\sample\service\LoggedUser.java
+D:\MedicalClinic\src\main\java\sample\controller\patient\PatientAddVisitController.java
+D:\MedicalClinic\src\main\java\sample\controller\secretary\SecretaryDispensingDrugController.java
+D:\MedicalClinic\src\main\java\sample\service\PrescriptionService.java
+D:\MedicalClinic\src\main\java\sample\service\VisitService.java
+D:\MedicalClinic\src\main\java\sample\service\NoteService.java
+D:\MedicalClinic\src\main\java\sample\controller\secretary\SecretaryHomeController.java
+D:\MedicalClinic\src\main\java\sample\model\Secretary.java
+D:\MedicalClinic\src\main\java\sample\controller\doctor\DoctorVisitListController.java
+D:\MedicalClinic\src\main\java\sample\model\User.java
+D:\MedicalClinic\src\main\java\sample\controller\doctor\DoctorPatientHistoryListController.java
+D:\MedicalClinic\src\main\java\sample\controller\patient\PatientPrescriptionController.java
+D:\MedicalClinic\src\main\java\sample\service\InitDataLoader.java
+D:\MedicalClinic\src\main\java\sample\model\Admin.java
+D:\MedicalClinic\src\main\java\sample\service\DoctorService.java
+D:\MedicalClinic\src\main\java\sample\model\Drug.java

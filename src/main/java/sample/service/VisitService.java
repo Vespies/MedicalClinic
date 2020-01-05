@@ -13,7 +13,7 @@ public class VisitService {
         return DataBase.getInstance().getVisitList().size() + 1;
     }
 
-    public List<Visit> patientHistory(Integer patientId) {
+    public List<Visit> patientVisitList(Integer patientId) {
         List<Visit> visitList = new ArrayList<>();
 
         for (Visit element : DataBase.getInstance().getVisitList()) {
@@ -26,11 +26,18 @@ public class VisitService {
         List<Visit> visitList = new ArrayList<>();
         LocalDate date = LocalDate.now();
 
-        for (Visit element : DataBase.getInstance().getVisitList()){
+        for (Visit element : DataBase.getInstance().getVisitList()) {
             if (element.isAccepted() && element.getDate().isAfter(date)) visitList.add(element);
         }
         return visitList;
     }
 
+    public List<Visit> doctorVisitList(Integer doctorId) {
+        List<Visit> visitList = new ArrayList<>();
 
+        for (Visit element : DataBase.getInstance().getVisitList()) {
+            if (element.getDoctorId().equals(doctorId)) visitList.add(element);
+        }
+        return visitList;
+    }
 }
