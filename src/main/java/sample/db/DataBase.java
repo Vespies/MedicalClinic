@@ -21,7 +21,7 @@ public class DataBase {
     private List<Visit> visitList;
 
 
-    public DataBase() {
+    private DataBase() {
         this.adminList = new ArrayList<>();
         this.doctorList = new ArrayList<>();
         this.drugList = new ArrayList<>();

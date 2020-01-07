@@ -17,4 +17,6 @@ public abstract class User {
     private String address;
     private int age;
     private String sex;
+
+
 }

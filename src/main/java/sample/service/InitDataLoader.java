@@ -20,14 +20,14 @@ public class InitDataLoader {
 
     public void addPatient() {
         for (int i = 0; i < 3; i++) {
-            Patient patient = new Patient(patientService.generatePatientId(), "patient" + i, "patient" + i, "p100" + (i + 1), "ppp", "address" + i, 30, "man");
+            Patient patient = new Patient(patientService.generatePatientId(), "patient" + (i + 1), "patient" + (i + 1), "p100" + (i + 1), "ppp", "address" + (i + 1), 30, "man");
             DataBase.getInstance().getPatientList().add(patient);
         }
     }
 
     public void addDoctor() {
         for (int i = 0; i < 3; i++) {
-            Doctor doctor = new Doctor(doctorService.generateDoctorId(), "doctor" + i, "doctor" + i, "d200" + (i + 1), "ddd", "address" + i, 30, "man");
+            Doctor doctor = new Doctor(doctorService.generateDoctorId(), "doctor" + (i + 1), "doctor" + (i + 1), "d200" + (i + 1), "ddd", "address" + (i + 1), 30, "man");
             DataBase.getInstance().getDoctorList().add(doctor);
         }
     }
