@@ -1,0 +1,10 @@
+[ {
+  "id" : 1,
+  "firstName" : "admin",
+  "lastName" : "admin",
+  "idNumber" : "a4001",
+  "password" : "aaa",
+  "address" : "address",
+  "age" : 30,
+  "sex" : "man"
+} ]

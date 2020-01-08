@@ -1,0 +1,41 @@
+[ {
+  "id" : 1,
+  "name" : "drug 1",
+  "quantity" : 26
+}, {
+  "id" : 2,
+  "name" : "drug 2",
+  "quantity" : 44
+}, {
+  "id" : 3,
+  "name" : "drug 3",
+  "quantity" : 10
+}, {
+  "id" : 4,
+  "name" : "drug 4",
+  "quantity" : 37
+}, {
+  "id" : 5,
+  "name" : "drug 5",
+  "quantity" : 22
+}, {
+  "id" : 6,
+  "name" : "drug 6",
+  "quantity" : 17
+}, {
+  "id" : 7,
+  "name" : "drug 7",
+  "quantity" : 5
+}, {
+  "id" : 8,
+  "name" : "drug 8",
+  "quantity" : 17
+}, {
+  "id" : 9,
+  "name" : "drug 9",
+  "quantity" : 27
+}, {
+  "id" : 10,
+  "name" : "drug 10",
+  "quantity" : 10
+} ]

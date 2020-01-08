@@ -1,8 +1,17 @@
 package sample.db;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.type.CollectionType;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.fasterxml.jackson.datatype.jsr310.JSR310Module;
 import lombok.Data;
 import sample.model.*;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,5 +43,60 @@ public class DataBase {
 
     public static DataBase getInstance() {
         return DATA_BASE;
+    }
+
+    public void saveDataToFile() throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(SerializationFeature.INDENT_OUTPUT);
+
+        mapper.registerModule(new JSR310Module());
+        mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+
+
+        mapper.writeValue(new File("admin.json"), adminList);
+        mapper.writeValue(new File("doctor.json"), doctorList);
+        mapper.writeValue(new File("drug.json"), drugList);
+        mapper.writeValue(new File("note.json"), noteList);
+        mapper.writeValue(new File("patient.json"), patientList);
+        mapper.writeValue(new File("prescription.json"), prescriptionList);
+        mapper.writeValue(new File("secretary.json"), secretaryList);
+
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        mapper.setDateFormat(df);
+        mapper.writeValue(new File("visit.json"), visitList);
+    }
+
+    public void loadDateFromFile() throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(SerializationFeature.INDENT_OUTPUT);
+
+        mapper.registerModule(new JSR310Module());
+        mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+
+        CollectionType type = TypeFactory.defaultInstance().constructCollectionType(List.class, Admin.class);
+        adminList = mapper.readValue(new File("admin.json"), type);
+
+        type = TypeFactory.defaultInstance().constructCollectionType(List.class, Doctor.class);
+        doctorList = mapper.readValue(new File("doctor.json"), type);
+
+        type = TypeFactory.defaultInstance().constructCollectionType(List.class, Drug.class);
+        drugList = mapper.readValue(new File("drug.json"), type);
+
+        type = TypeFactory.defaultInstance().constructCollectionType(List.class, Note.class);
+        noteList = mapper.readValue(new File("note.json"), type);
+
+        type = TypeFactory.defaultInstance().constructCollectionType(List.class, Patient.class);
+        patientList = mapper.readValue(new File("patient.json"), type);
+
+        type = TypeFactory.defaultInstance().constructCollectionType(List.class, Prescription.class);
+        prescriptionList = mapper.readValue(new File("prescription.json"), type);
+
+        type = TypeFactory.defaultInstance().constructCollectionType(List.class, Secretary.class);
+        secretaryList = mapper.readValue(new File("secretary.json"), type);
+
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        mapper.setDateFormat(df);
+        type = TypeFactory.defaultInstance().constructCollectionType(List.class, Visit.class);
+        visitList = mapper.readValue(new File("visit.json"), type);
     }
 }

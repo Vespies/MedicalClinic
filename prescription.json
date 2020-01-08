@@ -1,0 +1,15 @@
+[ {
+  "id" : 1,
+  "drugName" : "drug 1",
+  "quantity" : 2,
+  "dosage" : "3 times per day",
+  "patientId" : 1,
+  "doctorId" : 1
+}, {
+  "id" : 2,
+  "drugName" : "drug 1",
+  "quantity" : 1,
+  "dosage" : "1 times per day",
+  "patientId" : 1,
+  "doctorId" : 1
+} ]

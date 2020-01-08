@@ -5,7 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.db.DataBase;
 import sample.service.InitDataLoader;
+
+import java.io.IOException;
 
 public class Main extends Application {
 
@@ -24,19 +27,13 @@ public class Main extends Application {
     }
 
     @Override
-    public void init() {
-        initDataLoader.addPatient();
-        initDataLoader.addDoctor();
-        initDataLoader.addSecretary();
-        initDataLoader.addAdmin();
-        initDataLoader.addNote();
-        initDataLoader.addVisit();
-        initDataLoader.addDrug();
-        initDataLoader.addPrescription();
+    public void init() throws IOException {
+//        initDataLoader.initializeDataBase();
+        DataBase.getInstance().loadDateFromFile();
     }
 
     @Override
-    public void stop() {
-
+    public void stop() throws IOException {
+        DataBase.getInstance().saveDataToFile();
     }
 }

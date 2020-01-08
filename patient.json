@@ -1,0 +1,28 @@
+[ {
+  "id" : 1,
+  "firstName" : "patient1",
+  "lastName" : "patient1",
+  "idNumber" : "p1001",
+  "password" : "ppp",
+  "address" : "address1",
+  "age" : 30,
+  "sex" : "man"
+}, {
+  "id" : 2,
+  "firstName" : "patient2",
+  "lastName" : "patient2",
+  "idNumber" : "p1002",
+  "password" : "ppp",
+  "address" : "address2",
+  "age" : 30,
+  "sex" : "man"
+}, {
+  "id" : 3,
+  "firstName" : "patient3",
+  "lastName" : "patient3",
+  "idNumber" : "p1003",
+  "password" : "ppp",
+  "address" : "address3",
+  "age" : 30,
+  "sex" : "man"
+} ]

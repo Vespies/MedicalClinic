@@ -1,0 +1,22 @@
+[ {
+  "id" : 1,
+  "date" : "2020-01-07",
+  "accepted" : false,
+  "patientId" : 1,
+  "doctorId" : 1,
+  "noteId" : 1
+}, {
+  "id" : 2,
+  "date" : "2020-01-07",
+  "accepted" : true,
+  "patientId" : 1,
+  "doctorId" : 1,
+  "noteId" : 2
+}, {
+  "id" : 3,
+  "date" : "2020-01-21",
+  "accepted" : false,
+  "patientId" : 1,
+  "doctorId" : 1,
+  "noteId" : null
+} ]
