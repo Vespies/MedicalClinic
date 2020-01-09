@@ -8,6 +8,7 @@ import sample.model.Secretary;
 
 @Data
 public class LoggedUser {
+    // holds data about the logged user, clears it out after logging out
 
     private static final LoggedUser LOGGED_USER = new LoggedUser();
 

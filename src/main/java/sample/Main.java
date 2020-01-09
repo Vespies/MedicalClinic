@@ -26,12 +26,14 @@ public class Main extends Application {
         launch(args);
     }
 
+
+    // reading data from files at the start of the application
     @Override
     public void init() throws IOException {
-//        initDataLoader.initializeDataBase();
         DataBase.getInstance().loadDateFromFile();
     }
 
+    // saving data to files when exiting the application
     @Override
     public void stop() throws IOException {
         DataBase.getInstance().saveDataToFile();

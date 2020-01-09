@@ -26,17 +26,13 @@ public class DoctorVisitListController {
         visitList.getItems().setAll(visitService.doctorVisitList(doctor.getId()));
     }
 
+
+    // accepting notes po when clicking on the button
     public void changeVisitStatus(ActionEvent actionEvent) {
         Visit visit = visitList.getSelectionModel().getSelectedItem();
 
-        if (visit != null) {
-            if (visit.isAccepted()) {
-                visit.setAccepted(false);
-            } else {
-                visit.setAccepted(true);
-            }
+        if (visitService.changeVisitStatus(visit))
             visitList.getItems().setAll(visitService.doctorVisitList(doctor.getId()));
-        }
     }
 
     public void patientHomeView(ActionEvent actionEvent) throws IOException {

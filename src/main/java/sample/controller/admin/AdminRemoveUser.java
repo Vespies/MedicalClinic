@@ -13,81 +13,78 @@ import sample.model.Admin;
 import sample.model.Doctor;
 import sample.model.Patient;
 import sample.model.Secretary;
+import sample.service.AdminService;
 import sample.service.LoggedUser;
 
 import java.io.IOException;
 
+// communication with adminHome.fxml
 public class AdminRemoveUser {
 
     @FXML
-    public ListView<Patient> patientList;
-    public ListView<Secretary> secretaryList;
-    public ListView<Doctor> doctorList;
-    public ListView<Admin> adminList;
+    private ListView<Patient> patientList;
+
+    @FXML
+    private ListView<Secretary> secretaryList;
+
+    @FXML
+    private ListView<Doctor> doctorList;
+
+    @FXML
+    private ListView<Admin> adminList;
+
+    private AdminService adminService;
 
     public void initialize() {
+        adminService = new AdminService();
         patientList.getItems().setAll(DataBase.getInstance().getPatientList());
         secretaryList.getItems().setAll(DataBase.getInstance().getSecretaryList());
         doctorList.getItems().setAll(DataBase.getInstance().getDoctorList());
         adminList.getItems().setAll(DataBase.getInstance().getAdminList());
     }
 
+    // calling removePatient when clicking on the button
     public void removePatient(ActionEvent actionEvent) {
         Patient patient = patientList.getSelectionModel().getSelectedItem();
 
-        if (patient != null) {
-            DataBase.getInstance().getPatientList().remove(patient);
-
-            for (int i = 0; i < DataBase.getInstance().getPatientList().size(); i++) {
-                DataBase.getInstance().getPatientList().get(i).setId(i + 1);
-            }
-
+        // updating the list when a patient is removed
+        if (adminService.removePatient(patient))
             patientList.getItems().setAll(DataBase.getInstance().getPatientList());
-        }
     }
 
+    // calling removeSecretary when clicking on the button
     public void removeSecretary(ActionEvent actionEvent) {
         Secretary secretary = secretaryList.getSelectionModel().getSelectedItem();
 
-        if (secretary != null) {
-            DataBase.getInstance().getSecretaryList().remove(secretary);
-
-            for (int i = 0; i < DataBase.getInstance().getSecretaryList().size(); i++) {
-                DataBase.getInstance().getSecretaryList().get(i).setId(i + 1);
-            }
-
+        if (adminService.removeSecretary(secretary))
             secretaryList.getItems().setAll(DataBase.getInstance().getSecretaryList());
-        }
     }
 
+    // calling removeDoctor when clicking on the button
     public void removeDoctor(ActionEvent actionEvent) {
         Doctor doctor = doctorList.getSelectionModel().getSelectedItem();
 
-        if (doctor != null) {
-            DataBase.getInstance().getDoctorList().remove(doctor);
-
-            for (int i = 0; i < DataBase.getInstance().getDoctorList().size(); i++) {
-                DataBase.getInstance().getDoctorList().get(i).setId(i + 1);
-            }
-
+        if (adminService.removeDoctor(doctor))
             doctorList.getItems().setAll(DataBase.getInstance().getDoctorList());
-        }
     }
 
+    // calling removeAdmin when clicking on the button
     public void removeAdmin(ActionEvent actionEvent) throws IOException {
         Admin admin = adminList.getSelectionModel().getSelectedItem();
 
-        if (admin != null) {
-            if (LoggedUser.getInstance().getAdmin().equals(admin)) logout(actionEvent);
+        if (adminService.removeAdmin(admin)) {
 
-            DataBase.getInstance().getAdminList().remove(admin);
-            for (int i = 0; i < DataBase.getInstance().getAdminList().size(); i++) {
-                DataBase.getInstance().getAdminList().get(i).setId(i + 1);
+
+            // removing yourself when being logged in logs you out
+            if (LoggedUser.getInstance().getAdmin().equals(admin)) {
+                logout(actionEvent);
+            } else {
+                adminList.getItems().setAll(DataBase.getInstance().getAdminList());
             }
-            adminList.getItems().setAll(DataBase.getInstance().getAdminList());
         }
     }
 
+    // changing view to adminHome
     public void adminHomeView(ActionEvent actionEvent) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("/template/adminHome.fxml"));
         Scene scene = new Scene(parent);
@@ -97,6 +94,7 @@ public class AdminRemoveUser {
         window.show();
     }
 
+    // logging out
     public void logout(ActionEvent actionEvent) throws IOException {
         LoggedUser.getInstance().logout();
         Parent parent = FXMLLoader.load(getClass().getResource("/template/login.fxml"));

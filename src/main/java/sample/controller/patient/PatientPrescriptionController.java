@@ -62,7 +62,6 @@ public class PatientPrescriptionController {
         });
     }
 
-
     public void patientHomeView(ActionEvent actionEvent) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("/template/patientHome.fxml"));
         Scene scene = new Scene(parent);

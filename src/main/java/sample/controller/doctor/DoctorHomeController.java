@@ -12,6 +12,8 @@ import java.io.IOException;
 
 public class DoctorHomeController {
 
+    // changing views when clicking on buttons
+
     public void patientVisitListView(ActionEvent actionEvent) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("/template/doctorVisitList.fxml"));
         Scene scene = new Scene(parent);

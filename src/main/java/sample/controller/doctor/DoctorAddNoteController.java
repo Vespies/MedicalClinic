@@ -9,9 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
-import sample.db.DataBase;
 import sample.model.Doctor;
-import sample.model.Note;
 import sample.model.Visit;
 import sample.service.LoggedUser;
 import sample.service.NoteService;
@@ -35,16 +33,12 @@ public class DoctorAddNoteController {
         visitList.getItems().setAll(visitService.doctorVisitList(doctor.getId()));
     }
 
+    // adding notes to a visit
     public void addNote(ActionEvent actionEvent) {
         Visit visit = visitList.getSelectionModel().getSelectedItem();
         String noteString = noteField.getText();
 
-        if (visit != null && noteString != null) {
-            Note note = new Note(noteService.generateNoteId(), noteString);
-            DataBase.getInstance().getNoteList().add(note);
-
-            visit.setNoteId(note.getId());
-        }
+        noteService.addNote(visit, noteString);
     }
 
     public void doctorHomeView(ActionEvent actionEvent) throws IOException {

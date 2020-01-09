@@ -6,6 +6,7 @@ import sample.model.*;
 import java.time.LocalDate;
 import java.util.Random;
 
+// initialising the application with some basic data
 public class InitDataLoader {
 
     private AdminService adminService = new AdminService();

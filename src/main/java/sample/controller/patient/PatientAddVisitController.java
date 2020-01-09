@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 import sample.db.DataBase;
 import sample.model.Doctor;
 import sample.model.Patient;
-import sample.model.Visit;
 import sample.service.LoggedUser;
 import sample.service.VisitService;
 
@@ -43,14 +42,12 @@ public class PatientAddVisitController {
         window.show();
     }
 
-    public void add(ActionEvent actionEvent) {
+    // adding a visit
+    public void addVisit(ActionEvent actionEvent) {
         LocalDate date = dataPicker.getValue();
         Doctor doctor = doctorList.getSelectionModel().getSelectedItem();
         Patient patient = LoggedUser.getInstance().getPatient();
 
-        if (date != null && doctor != null && patient != null) {
-            Visit visit = new Visit(visitService.generateVisitId(), date, false, patient.getId(), doctor.getId(), null);
-            DataBase.getInstance().getVisitList().add(visit);
-        }
+        visitService.addVisit(date, doctor, patient);
     }
 }

@@ -37,6 +37,8 @@ public class DoctorPatientHistoryListController {
     public void initialize() {
         patientList.getItems().setAll(DataBase.getInstance().getPatientList());
 
+
+        // searching for the visits of the picked patient
         patientList.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
@@ -48,6 +50,8 @@ public class DoctorPatientHistoryListController {
             }
         });
 
+
+        // updating notes
         visitList.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {

@@ -2,6 +2,7 @@ package sample.service;
 
 import sample.db.DataBase;
 import sample.model.Note;
+import sample.model.Visit;
 
 public class NoteService {
 
@@ -14,5 +15,16 @@ public class NoteService {
             if (element.getId().equals(noteId)) return element;
         }
         return null;
+    }
+
+    public boolean addNote(Visit visit, String noteString) {
+        if (visit != null && noteString != null) {
+            Note note = new Note(generateNoteId(), noteString);
+            DataBase.getInstance().getNoteList().add(note);
+
+            visit.setNoteId(note.getId());
+            return true;
+        }
+        return false;
     }
 }

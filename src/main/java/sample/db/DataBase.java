@@ -18,6 +18,9 @@ import java.util.List;
 @Data
 public class DataBase {
 
+    // singleton design pattern, the database
+    // saves and reads data to files
+
     private static final DataBase DATA_BASE = new DataBase();
 
     private List<Admin> adminList;
@@ -45,14 +48,17 @@ public class DataBase {
         return DATA_BASE;
     }
 
+
+    // saving to the json file
     public void saveDataToFile() throws IOException {
+
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
 
         mapper.registerModule(new JSR310Module());
         mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
 
-
+        // saving data one thing after the other
         mapper.writeValue(new File("admin.json"), adminList);
         mapper.writeValue(new File("doctor.json"), doctorList);
         mapper.writeValue(new File("drug.json"), drugList);
@@ -66,6 +72,7 @@ public class DataBase {
         mapper.writeValue(new File("visit.json"), visitList);
     }
 
+    // reading data from files and saving data to files
     public void loadDateFromFile() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);

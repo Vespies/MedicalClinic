@@ -28,7 +28,6 @@ public class PatientVisitHistoryController {
         visitList.getItems().setAll(visitService.patientVisitList(patient.getId()));
     }
 
-
     public void patientHome(ActionEvent actionEvent) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("/template/patientHome.fxml"));
         Scene scene = new Scene(parent);

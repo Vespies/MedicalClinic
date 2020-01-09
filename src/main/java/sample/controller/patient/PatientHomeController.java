@@ -12,6 +12,7 @@ import java.io.IOException;
 
 public class PatientHomeController {
 
+    // changing views when clicking on buttons
 
     public void addVisitView(ActionEvent actionEvent) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("/template/patientAddVisit.fxml"));
@@ -21,7 +22,6 @@ public class PatientHomeController {
         window.setScene(scene);
         window.show();
     }
-
 
     public void visitHistoryView(ActionEvent actionEvent) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("/template/patientVisitHistory.fxml"));

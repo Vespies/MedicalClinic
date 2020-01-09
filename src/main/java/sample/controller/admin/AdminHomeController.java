@@ -10,7 +10,10 @@ import sample.service.LoggedUser;
 
 import java.io.IOException;
 
+// communication with adminHome.fxml
 public class AdminHomeController {
+
+    // changing view to adminAddUser.fxml upon clikcing on the button
 
     public void addUserView(ActionEvent actionEvent) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("/template/adminAddUser.fxml"));
@@ -21,6 +24,8 @@ public class AdminHomeController {
         window.show();
     }
 
+    // changing view to adminRemoveUser.fxml upon clicking on the button
+
     public void removeUserView(ActionEvent actionEvent) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("/template/adminRemoveUser.fxml"));
         Scene scene = new Scene(parent);
@@ -29,6 +34,8 @@ public class AdminHomeController {
         window.setScene(scene);
         window.show();
     }
+
+    // changing view to login.fxml upon clicking on the button
 
     public void logout(ActionEvent actionEvent) throws IOException {
         LoggedUser.getInstance().logout();

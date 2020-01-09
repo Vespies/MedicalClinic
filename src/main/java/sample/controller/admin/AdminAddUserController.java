@@ -13,6 +13,7 @@ import sample.service.AdminService;
 
 import java.io.IOException;
 
+// communication with adminAddUser.fxml
 public class AdminAddUserController {
 
     @FXML
@@ -35,8 +36,7 @@ public class AdminAddUserController {
         choiceBoxRole.getSelectionModel().selectFirst();
     }
 
-
-    public void addUser(ActionEvent actionEvent) {
+    public boolean addUser(ActionEvent actionEvent) {
         String firstName = firstNameField.getText();
         String lastName = lastNameField.getText();
         String idNumber = idNumberField.getText();
@@ -46,9 +46,12 @@ public class AdminAddUserController {
         String sex = choiceBoxSex.getValue();
         String role = choiceBoxRole.getValue();
 
-        adminService.addUser(firstName, lastName, idNumber, password, address, age, sex, role);
+
+        // adding new user using the data
+        return adminService.addUser(firstName, lastName, idNumber, password, address, age, sex, role);
     }
 
+    // changing view to adminHome.fxml upon clicking on the button
     public void adminHomeView(ActionEvent actionEvent) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("/template/adminHome.fxml"));
         Scene scene = new Scene(parent);

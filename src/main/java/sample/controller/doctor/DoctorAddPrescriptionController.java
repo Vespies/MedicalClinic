@@ -14,7 +14,6 @@ import sample.db.DataBase;
 import sample.model.Doctor;
 import sample.model.Drug;
 import sample.model.Patient;
-import sample.model.Prescription;
 import sample.service.LoggedUser;
 import sample.service.PrescriptionService;
 
@@ -43,6 +42,7 @@ public class DoctorAddPrescriptionController {
         drugList.getItems().setAll(DataBase.getInstance().getDrugList());
     }
 
+    // adding prescription
     public void addPrescription(ActionEvent actionEvent) {
         Patient patient = patientList.getSelectionModel().getSelectedItem();
         Drug drug = drugList.getSelectionModel().getSelectedItem();
@@ -50,10 +50,7 @@ public class DoctorAddPrescriptionController {
         int quantity = Integer.parseInt(quantityField.getText());
         String dosage = dosageField.getText();
 
-        if (patient != null && drug != null && doctor != null) {
-            Prescription prescription = new Prescription(prescriptionService.generatePrescriptionId(), drug.getName(), quantity, dosage, patient.getId(), doctor.getId());
-            DataBase.getInstance().getPrescriptionList().add(prescription);
-        }
+        prescriptionService.addPrescription(patient, drug, doctor, quantity, dosage);
     }
 
     public void doctorHomeView(ActionEvent actionEvent) throws IOException {
